@@ -4,8 +4,7 @@ from utils import extract_text_from_pdf,fetch_job_description
 resume_text=extract_text_from_pdf
 jd_text=fetch_job_description
 # Initialize the GenAI client
-api_key=st.secrets['gemini_api_key']
-client = genai.configure(api_key)
+genai.configure(api_key=st.secrets["gemini_api_key"])
 model = genai.GenerativeModel("gemma-3-27b-it")
 # Input prompt from the user (e.g., paste resume or job description)
 #job_description = input("\nPaste the job description you’re applying to:\n")
